@@ -148,7 +148,9 @@ public class StudentController {
     try {
       student = studentService.saveStudent(student);
     } catch (Exception e) {
-      logger.error("Error while saving student", e);
+      //logger.error("Error while saving student", e);
+	  //this code will be flagged by analyzer as critical
+		e.printStackTrace();
     }
 
     if (student != null) {
